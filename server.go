@@ -11,7 +11,7 @@ import (
 )
 
 type Id struct {
-	Id uuid.UUID `json:"string"`
+	Id uuid.UUID `json:"id"`
 }
 
 func main() {
