@@ -5,6 +5,8 @@ go:
     - release
     - tip
 
-install: go get -d -v ./... && go build -v ./...
+install:
+    - go get -d -v ./... && go build -v ./...
+    - go get github.com/stretchr/testify/assert
 
 script: go test ./...
