@@ -16,7 +16,7 @@ To install and run this service, do:
 The server exposes some arguments:
 
 | Option | Description |
-|--|--|
+|---|---|
 | `-host=""` | The address to listen on. Leave empty to listen on all interfaces |
 | `-port=80` | The port to listen on | 
 
