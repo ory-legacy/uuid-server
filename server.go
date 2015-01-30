@@ -16,7 +16,7 @@ type Id struct {
 
 func main() {
 	portPtr := flag.String("port", "80", "The port to listen on")
-	hostPtr := flag.String("host", "", "The adress to listen on. Leave empty to listen on all interfaces")
+	hostPtr := flag.String("host", "", "The address to listen on. Leave empty to listen on all interfaces")
 	flag.Parse()
 	listen := fmt.Sprintf("%s:%s", *hostPtr, *portPtr)
 	r := mux.NewRouter()
