@@ -3,7 +3,6 @@ package main
 import (
     "code.google.com/p/go-uuid/uuid"
     "encoding/json"
-    "flag"
     "fmt"
     "github.com/gorilla/mux"
     "log"
