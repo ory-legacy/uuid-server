@@ -13,12 +13,13 @@ To install and run this service, do:
 > <gopath>/bin/uuid-server
 ```
 
-The server exposes some arguments:
+## Config
 
-| Option | Description |
-|--|--|
-| `-host=""` | The address to listen on. Leave empty to listen on all interfaces |
-| `-port=80` | The port to listen on | 
+To specify which port to listen on, create an environment variable called `PORT`. Per default, this application
+listens on port 80.
+
+To specify which host to listen on, create an environment variable called `HOST`. Per default, this application
+listens on all hosts (which equals to an empty string).
 
 ## Usage
 
