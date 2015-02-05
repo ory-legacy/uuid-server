@@ -10,7 +10,7 @@ import (
     "os"
 )
 
-type Id struct {
+type Container struct {
     Id uuid.UUID `json:"id"`
 }
 
@@ -24,7 +24,7 @@ func main() {
 
 func createHandler(w http.ResponseWriter, r *http.Request) {
     id := createUuid()
-    e := Id{id}
+    e := Container{id}
     j, err := json.Marshal(e)
 
     if err != nil {
