@@ -7,7 +7,7 @@ import (
     "github.com/gorilla/mux"
     "log"
     "net/http"
-    "os"
+    "github.com/ory-libs/env"
 )
 
 type Container struct {
@@ -15,7 +15,8 @@ type Container struct {
 }
 
 func main() {
-    host, port := configFromEnv()
+    host := env.Getenv("HOST", "")
+    port := env.Getenv("PORT", "80")
     listen := fmt.Sprintf("%s:%s", host, port)
     r := mux.NewRouter()
     r.HandleFunc("/", createHandler).Methods("POST")
@@ -39,18 +40,4 @@ func createHandler(w http.ResponseWriter, r *http.Request) {
 
 func createUuid() uuid.UUID {
     return uuid.NewRandom()
-}
-
-func configFromEnv() (host string, port string) {
-    host = os.Getenv("HOST")
-    if host == "" {
-        host = ""
-    }
-
-    port = os.Getenv("PORT")
-    if port == "" {
-        port = "80"
-    }
-
-    return host, port
 }

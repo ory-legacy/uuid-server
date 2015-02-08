@@ -26,7 +26,7 @@ func TestCreateUnique(t *testing.T) {
 	assert.NotEqual(t, id1.Id, id2.Id)
 }
 
-func mockUuidCreate(t *testing.T) Id {
+func mockUuidCreate(t *testing.T) Container {
 	m := mux.NewRouter()
 	recorder := httptest.NewRecorder()
 	req, err := http.NewRequest("POST", "http://example.com/", nil)
@@ -38,7 +38,7 @@ func mockUuidCreate(t *testing.T) Id {
 	assert.Equal(t, 200, recorder.Code)
 	assert.NotEmpty(t, recorder.Body)
 
-	var e Id
+	var e Container
 	decoder := json.NewDecoder(recorder.Body)
 	err = decoder.Decode(&e)
 
