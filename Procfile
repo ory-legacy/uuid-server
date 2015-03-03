@@ -1,1 +1,0 @@
-web: uuid-server
