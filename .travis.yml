@@ -6,7 +6,6 @@ go:
     - tip
 
 install:
-    - go get -d -v ./... && go build -v ./...
-    - go get github.com/stretchr/testify/assert
+   - go get -d -v ./... && go build -v ./... && go test ./... -i
 
 script: go test ./...
