@@ -7,7 +7,7 @@ import (
     "github.com/gorilla/mux"
     "log"
     "net/http"
-    "github.com/ory-platform/common/env"
+    "github.com/ory-am/common/env"
 )
 
 type Container struct {
